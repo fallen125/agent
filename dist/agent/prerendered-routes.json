@@ -1,0 +1,14 @@
+{
+  "routes": {
+    "/": {},
+    "/adminchat": {},
+    "/adminpanels": {},
+    "/chat": {},
+    "/dashboard": {},
+    "/deposit": {},
+    "/login": {},
+    "/main": {},
+    "/register": {},
+    "/withdraw": {}
+  }
+}
