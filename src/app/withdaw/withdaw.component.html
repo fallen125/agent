@@ -1,0 +1,58 @@
+<header>
+    <a href="/main">
+        <img src="../../assets/logo3.png" alt="">
+    </a>
+    <nav>
+        <a href="/dashboard">Home</a>
+    
+    <button class="logoutButton" (click)="logout()">Log Out</button>
+   
+</nav>
+</header>
+
+<section>
+    <h1>Withdraw</h1>
+    <div class="btcwithdraw">
+     
+      <div class="form-group">
+  <label for="btc-address">Destination Address</label>
+  <span class="sub-label">Please double check this address</span>
+  <div class="input-wrapper">
+    <div class="icon">
+      <span>₿</span> <!-- You can also use an SVG or font-awesome icon -->
+    </div>
+    <input id="btc-address" type="text" placeholder="Bitcoin Address" >
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="btc-amount">Amount BTC</label>
+  <span class="sub-label">Maximum amount withdrawable:</span>
+  <div class="sub-amount">0.00 BTC</div>
+
+  <div class="input-wrapper">
+    <div class="icon">
+      <span>₿</span> <!-- Replace with icon/font if needed -->
+    </div>
+    <input id="btc-amount" type="text" placeholder="Amount">
+  </div>
+</div>
+
+
+   <div class="fee-section">
+  <div class="fee-header">
+    <div class="fee-info">
+      <h3>Bitcoin Network Fee (BTC)</h3>
+      <p>Transactions on the Bitcoin network are prioritized<br>by fees</p>
+    </div>
+    <div class="fee-value">0.0005</div>
+    <button class="withdraw-btn">Withdraw Now</button>
+  </div>
+
+  <ul class="info-list">
+    <li>BTC network transfers will be credited to your Bitcoin account after 25 network confirmations. It may be delayed up to 0–1 business day.</li>
+    <li>Note that we have daily withdrawal limits.</li>
+  </ul>
+</div>
+    </div>
+</section>

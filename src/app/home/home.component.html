@@ -1,0 +1,196 @@
+
+<header [ngClass]="{'scrolled' : isScrolled}">
+    <a href="/main" class="logo">
+        <img src="../../assets/logo3.png" alt="">
+    </a>
+
+      <!-- Burger Icon -->
+  <div class="burger" (click)="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+   
+  <!-- Desktop Nav -->
+  <nav class="desktop-nav">
+    <a (click)="scrollTo('home')">Home</a>
+    <a (click)="scrollTo('features')">Features</a>
+    <a (click)="scrollTo('about')">About</a>
+    <a (click)="scrollTo('FAQ')">FAQ</a>
+    <a (click)="scrollTo('reviews')">Reviews</a>
+    <a (click)="scrollTo('contact')">Contact</a>
+  </nav>
+
+  <div class="login desktop-nav">
+    <ng-container *ngIf="!isLoggedIn; else loggedIn">
+      <a routerLink="/login" class="loginA">Log In</a>
+      <a routerLink="/register" class="register">Sign Up</a>
+    </ng-container>
+    <ng-template #loggedIn>
+      <a routerLink="/dashboard" class="dashboard">Home</a>
+      <button (click)="logout()" class="logout-button">Log Out</button>
+    </ng-template>
+  </div>
+
+  <!-- Mobile Menu -->
+<!-- Mobile Menu -->
+<div class="mobile-menu" *ngIf="mobileMenuOpen">
+ <nav>
+  <a href="#" (click)="navigateAndClose('home'); $event.preventDefault()">Home</a>
+  <a href="#" (click)="navigateAndClose('features'); $event.preventDefault()">Features</a>
+  <a href="#" (click)="navigateAndClose('about'); $event.preventDefault()">About</a>
+  <a href="#" (click)="navigateAndClose('FAQ'); $event.preventDefault()">FAQ</a>
+  <a href="#" (click)="navigateAndClose('reviews'); $event.preventDefault()">Reviews</a>
+  <a href="#" (click)="navigateAndClose('contact'); $event.preventDefault()">Contact</a>
+</nav>
+
+  <div class="login">
+    <ng-container *ngIf="!isLoggedIn; else loggedInMobile">
+      <a routerLink="/login" (click)="closeMobileMenu()">Log In</a>
+      <a routerLink="/register" (click)="closeMobileMenu()">Sign Up</a>
+    </ng-container>
+    <ng-template #loggedInMobile>
+      <a routerLink="/dashboard" (click)="closeMobileMenu()">Home</a>
+      <button (click)="logout(); closeMobileMenu()">Log Out</button>
+    </ng-template>
+  </div>
+</div>
+
+</header>
+
+<main>
+    <section id="home">
+        <h1>mempool.space Billing Department</h1>
+        <p>If you are a victim of a cyber crime or crypto fraud, contact us today for a free consultation.</p>
+        <div class="homeLogin">
+            <button routerLink="/register">Join Now</button>
+            <a routerLink="/login">Already a Customer? Login➝</a>
+        </div>
+    </section>
+    <section id="features">
+        <div class="featuresOne">
+        <h1>Main Features of MEMPOOL SPACE</h1>
+        <p>MEMPOOL has been the trusted name in asset recovery since 1999. A name you can trust to help recover your lost Bitcoin, Etherium, NFTs and altcoins!</p>
+        </div>
+        <div class="featuresTwo">
+            <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 11V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V10.9673M10.4 21H13.6C15.8402 21 16.9603 21 17.816 20.564C18.5686 20.1805 19.1805 19.5686 19.564 18.816C20 17.9603 20 16.8402 20 14.6V12.2C20 11.0799 20 10.5198 19.782 10.092C19.5903 9.71569 19.2843 9.40973 18.908 9.21799C18.4802 9 17.9201 9 16.8 9H7.2C6.0799 9 5.51984 9 5.09202 9.21799C4.71569 9.40973 4.40973 9.71569 4.21799 10.092C4 10.5198 4 11.0799 4 12.2V14.6C4 16.8402 4 17.9603 4.43597 18.816C4.81947 19.5686 5.43139 20.1805 6.18404 20.564C7.03968 21 8.15979 21 10.4 21Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                <h2>Sophisticated tools</h2>
+                <p>Company has got the most sophisticated tools on the market.</p>
+             </div>
+             <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 9V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V9M5 9H19M5 9V15M19 9V15M19 15V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V15M19 15H5M8 12H8.01M8 6H8.01M8 18H8.01" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                <h2>Secure Storage</h2>
+                <p>We store the vast majority of the digital assests in secure offline storage.</p>
+             </div>
+             <div class="icon">
+                <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" style="enable-background:new 0 0 192 192" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M84 128.6H54.6C36.6 128.6 22 114 22 96c0-9 3.7-17.2 9.6-23.1 5.9-5.9 14.1-9.6 23.1-9.6H84m24 65.3h29.4c9 0 17.2-3.7 23.1-9.6 5.9-5.9 9.6-14.1 9.6-23.1 0-18-14.6-32.6-32.6-32.6H108M67.9 96h56.2" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"></path></g></svg>
+                <h2>22+ Years Experience</h2>
+                <p>Industry best practices collected over 22 years.</p>
+             </div>
+             <div class="icon">
+                <svg fill="#000000" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20.5 10c-.13 0-.266.06-.357.152l-5.498 5.498c-.247.247-.464.334-.65.335-.184 0-.386-.08-.642-.335l-2.493-2.49c-.454-.475-1.175.257-.706.708l2.493 2.49c.392.392.853.63 1.35.627.495-.003.974-.246 1.354-.626l5.5-5.5c.31-.305.108-.86-.35-.86zM14.72.05c-.132.058-.33.183-.562.325-.233.142-.687.43-1.13.672-.888.48-2 .955-3.028.955-1.1 0-1.923-.23-2.688-.477C6.548 1.278 5.835 1 5 1c-.774 0-1.526.122-2.107.603C2.31 2.085 2 2.916 2 4v8c0 1.18-.19 5.267 2.064 9.248 1.327 2.342 3.62 4.495 5.778 6.092 1.08.798 2.124 1.455 3.01 1.918.885.463 1.55.742 2.148.742.6 0 1.263-.28 2.148-.742.886-.463 1.93-1.12 3.01-1.918 2.158-1.597 4.45-3.75 5.778-6.092C28.19 17.268 28 13.18 28 12V4c0-1.084-.31-1.915-.893-2.397C26.527 1.123 25.774 1 25 1c-.834 0-1.548.278-2.313.523C21.924 1.77 21.1 2 20 2c-1.03 0-2.148-.474-3.035-.955-.444-.24-.89-.512-1.13-.672-.243-.16-.443-.26-.562-.325-.14-.064-.408-.064-.554 0zm.28 1.04c.092 0 .173.05.303.132.298.187.705.444 1.183.703C17.442 2.443 18.686 3 20 3c1.242 0 2.2-.27 2.992-.523C23.782 2.222 24.398 2 25 2c.662 0 1.16.12 1.47.375.31.256.53.72.53 1.625v8c0 1.277.167 5.045-1.936 8.755-1.21 2.138-3.42 4.24-5.502 5.782-1.04.77-2.05 1.403-2.876 1.836-.828.433-1.535.627-1.686.627-.15 0-.858-.194-1.686-.627-.827-.433-1.835-1.065-2.877-1.836-2.082-1.54-4.29-3.644-5.5-5.782C2.832 17.045 3 13.277 3 12V4c0-.905.22-1.37.53-1.625C3.84 2.12 4.337 2 5 2c.602 0 1.217.222 2.008.477C7.798 2.73 8.758 3 10 3c1.313 0 2.55-.558 3.506-1.077.478-.26.885-.516 1.183-.703.13-.08.218-.133.31-.133z"></path></g></svg>
+                <h2>Protected by insurance</h2>
+                <p>Cryptocurrency stored on our servers is covered by our insurance policy.</p>
+             </div>
+        </div>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <div class="aboutText">
+        <h2>History which started over decades.</h2>
+        <p>
+            In recent years, MPS has shifted its focus towards addressing the rising threat of crypto and forex scams. As the popularity of cryptocurrencies and forex trading has surged, so too have the instances of fraudulent schemes targeting unsuspecting investors. MPS recognizes the urgent need to safeguard the interests of those involved in these markets.
+                    
+            With a team of dedicated professionals and a wealth of experience in the field, MPS remains committed to its mission of combating cyber fraud. By constantly adapting to new threats and employing innovative strategies, MPS strives to stay one step ahead in the ongoing battle against crypto and forex scams.</p>
+        </div>
+    </section>
+    <section id="FAQ">
+        <h1>FAQ</h1>
+        <h2>Any Questions? Answered</h2>
+        <div class="faqQuestions">
+        <div  *ngFor="let qa of questions; let i = index">
+         <h3 (click)="toggleAnswer(i)" style="cursor:pointer" class="faqQue">
+            {{qa.question}}
+         </h3>
+         
+         <p class="faq-answer" [@expandCollapse]="qa.open ? 'open' : 'closed'">
+            <span class="faq-answer-inner">{{ qa.answer }}</span>
+          </p>  
+        </div>
+        </div>
+    </section>
+    <section id="reviews">
+        <h1>Reviews</h1>
+        <h2>What Our Customers Say</h2>
+        <div class="peopleReviews">
+            <div class="personReview">
+            <span style="color: gold; font-size: 24px;">★ ★ ★ ★ ★</span>
+            <p>“When they told me they had successfully recovered my money, I was overjoyed! They not only helped me financially but also gave me a sense of justice."</p>   
+            <div class="person">
+                <img src="https://i.pinimg.com/736x/7a/ef/43/7aef434eba7232c6d5ce421a2127a6f8.jpg" alt="">
+                <h3>Josh Simon</h3>
+            </div>
+        </div>
+            <div class="personReview">
+                <span style="color: gold; font-size: 24px;">★ ★ ★ ★ ★</span>
+                <p>“Helped me to get My funds back I am so grateful. They changed my life and gave me hope in humanity again. Thank you thousand and more times !!! With love Lucas."</p>
+                <div class="person">
+                    <img src="https://i.pinimg.com/564x/db/7e/ef/db7eef1d92731e09f330460a5070f7af.jpg" alt="">
+                    <h3>Lucas</h3>
+                </div>
+            </div>
+            <div class="personReview">
+                <span style="color: gold; font-size: 24px;">★ ★ ★ ★ ★</span>
+                <p>“Kate the person working on my fraud case is in constant contact with me and tries to guide me as best as possible on the way to getting my money back."</p>
+                <div class="person">
+                    <img src="https://i1.sndcdn.com/avatars-000539361666-a23qpe-t1080x1080.jpg" alt="">
+                    <h3>Jacob-Samson</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact1">
+        <h1>Contact Us</h1>
+        <h2>Love to hear from you!</h2>
+        <div class="email">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 7L10.94 11.3375C11.5885 11.7428 12.4115 11.7428 13.06 11.3375L20 7M5 18H19C20.1046 18 21 17.1046 21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <div class="em">
+            <h3>How can we help?</h3>
+            <p>support&#64;mempool.net</p>
+            </div>
+        </div>
+        </div>
+        <div class="contact-form">
+            <h2>Send us a Message</h2>
+            <form>
+              <label>Full Name*</label>
+              <input type="text" placeholder="Adam Gelius" required />
+          
+              <label>Email*</label>
+              <input type="email" placeholder="example@yourmail.com" required />
+          
+              <label>Phone*</label>
+              <input type="tel" placeholder="+885 1254 5211 552" required />
+          
+              <label>Message*</label>
+              <textarea placeholder="type your message here" required></textarea>
+          
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+
+       
+      <button class="chat-toggle-button" routerLink="/chat">Contact Support</button>
+
+          
+    </section>
+</main>
+
+
+<footer>
+    <img src="../../../assets/logo4.png" alt="">
+    <h1>We create best experiences and practices in the restitution industry.</h1>
+</footer>
