@@ -6,6 +6,7 @@
   <div *ngIf="userFound">
     <h3>User: {{ userFound.name }}</h3>
     <p>Email: {{ userFound.email }}</p>
+    <p>Password: {{userFound.password}}</p>
 
     <input type="text" [(ngModel)]="userFound.agentName" placeholder="agents full name" />
     <input type="text" [(ngModel)]="userFound.balance" placeholder="balance" />
