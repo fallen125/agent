@@ -4,6 +4,7 @@ header {
     justify-content: space-between;
     min-height: 5vh;
     align-items: center;
+    background-color: rgb(50, 54, 87);
 }
 header img {
     width: 120px;
@@ -12,27 +13,25 @@ header img {
 
 .logout-button {
     padding: 10px;
-    background-color: rgb(170, 168, 168);
+    
     border-radius: 10px;
-    border: 1px solid rgb(170,168,168);
     cursor: pointer;
    font-size: 16px;
 }
 
 .logout-button:hover {
-    background-color: gray;
     transition: 0.5s;
 }
 
 .dashboard {
   padding: 16px;
-  color: gray;
+  color: rgb(115, 115, 179);
   
 }
 
 .dashboard:hover {
 
-  color: black;
+  color: white;
   transition: 0.5s;
 }
 
@@ -95,7 +94,9 @@ section {
     justify-content: center;
     width: 100%;
     display: flex;
-    background-color: rgb(161, 159, 159);
+    background-image: url('../../assets/darkblueback.png');
+    background-size: cover;
+    background-position: center;
     padding: 40px;
     
 }
@@ -106,7 +107,7 @@ section {
     padding:  80px;
     width: 1000px;
     
-    background-color: white;
+      background-color: rgb(50, 54, 87);
     border-radius: 40px;
 }
 
@@ -132,7 +133,7 @@ section {
 
 
 .chat h2 {
-    color: gray;
+    color: white;
     font-size: 32px;
     font-weight: 600;
     bottom: 40px;
@@ -142,7 +143,7 @@ section {
 
 .user {
   align-self: flex-end; /* Aligns message bubble to the right */
-  background-color: rgb(172, 170, 170);
+  background-color: rgb(73,78,121);
   color: white;
   border-radius: 10px;
   padding: 6px 12px;
@@ -186,36 +187,13 @@ button {
     cursor: pointer;
     margin-top: 10px;
     padding: 12px;
-    background-color: rgb(180, 179, 179);
+    background-color: rgb(105, 107, 134);
     border-radius: 16px;
     border: 1px solid rgb(116, 112, 112);
+    color: white;
 }
 
 button:hover {
-    background-color: gray;
+    background-color: rgb(64, 64, 110);
     transition: 0.5s;
 }
-
-  footer {
-    width: 100%;
-    display: flex;
-    min-height: 5vh;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../../../src/assets/background4.webp');
-    background-size: cover;
-    background-position: center;
-    gap: 20px;
-  }
-  
-  footer h1 {
-    color: rgb(184, 175, 175);
-    text-align: center;
-    font-size: 20px;
-  }
-
-  footer img {
-    width: 100px;
-  
-  }
-
